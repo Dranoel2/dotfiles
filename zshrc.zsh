@@ -11,14 +11,11 @@ compinit
 source /usr/share/nvm/init-nvm.sh
 
 PS1='%F{cyan}%2~ %F{yellow}%#> %f'
-export PATH=~/.local/bin:$PATH
+export PATH="$(yarn global bin):~/.local/bin:$PATH"
 
-alias update="pac-update"
-alias pac="sudo pacman --assume-installed nodejs --assume-installed npm"
-alias pac-install="pac -S "
-alias pac-update="pac -Syu"
-alias pac-remove="pac -R"
+alias update="pac-update; aur-update"
+alias pac="doas pacman --assume-installed nodejs --assume-installed npm"
 alias aur="yay --assume-installed nodejs --assume-installed npm"
-alias aur-install="aur -S"
+alias reload="source ~/.zshrc"
 
 neofetch
