@@ -34,6 +34,7 @@ main = do
     }
     `additionalKeysP`
     [ ("M-f", sendMessage ToggleLayout)
+    , ("M-p", spawn myLauncher)
     ]
 
 
@@ -45,6 +46,7 @@ myWorkspaces     = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 -- Default Apps
 myTerminal       = "alacritty"
 myBrowser        = "waterfox-g4"
+myLauncher       = "rofi -show run -theme dranoelsTheme"
 
 -- Borders
 myBorderColor    = "#ffffff"

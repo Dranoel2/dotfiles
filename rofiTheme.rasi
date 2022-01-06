@@ -1,0 +1,30 @@
+/**
+ * Dranoel's Colour Scheme
+ * Rofi version: 1.7.2
+ **/
+* {
+  background-color: #282c34;
+  text-color: #ffffff;
+}
+window {
+  anchor: center;
+  location: center;
+}
+mainbox {
+  border: 1;
+  border-color: #00f0ff;
+}
+inputbar {
+  border: 1;
+  border-color: #00f0ff;
+  background-color: white;
+}
+prompt, entry, selected {
+  background-color: white;
+  text-color: black;
+  padding: 5;
+}
+
+element {
+
+}
