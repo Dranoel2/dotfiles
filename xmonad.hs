@@ -52,7 +52,7 @@ myLauncher       = "rofi -show run -theme dranoelsTheme"
 -- Borders
 myBorderColor    = "#ffffff"
 myFocusedColor   = "#00f0ff"
-myBorderWidth    = 2
+myBorderWidth    = 5
 
 --------------------------------------------------------------------------------
 
