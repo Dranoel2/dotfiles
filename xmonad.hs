@@ -50,7 +50,7 @@ myBrowser        = "waterfox-g4"
 myLauncher       = "rofi -show run -theme dranoelsTheme"
 
 -- Borders
-myBorderColor    = "#ffffff"
+myBorderColor    = "#282c34"
 myFocusedColor   = "#00f0ff"
 myBorderWidth    = 5
 
