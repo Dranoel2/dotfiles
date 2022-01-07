@@ -35,6 +35,7 @@ main = do
     `additionalKeysP`
     [ ("M-f", sendMessage ToggleLayout)
     , ("M-p", spawn myLauncher)
+    , ("M-b", spawn myBrowser)
     ]
 
 
@@ -49,9 +50,9 @@ myBrowser        = "waterfox-g4"
 myLauncher       = "rofi -show run -theme dranoelsTheme"
 
 -- Borders
-myBorderColor    = "#ffffff"
+myBorderColor    = "#282c34"
 myFocusedColor   = "#00f0ff"
-myBorderWidth    = 2
+myBorderWidth    = 5
 
 --------------------------------------------------------------------------------
 
