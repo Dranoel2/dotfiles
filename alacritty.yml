@@ -1,0 +1,22 @@
+colors:
+  primary:
+    background: '#282c34'
+    foreground: '#c8c8c8'
+
+  cursor:
+    text: '#000000'
+    cursor: '#ffffff'
+
+  normal:
+    black: '#000000'
+    red: '#ff0000'
+    green: '#00ff00'
+    yellow: '#ffff00'
+    blue: '#0000ff'
+    magenta: '#ff00ff'
+    cyan: '#00ffff'
+    white: '#ffffff'
+
+cursor:
+  style:
+    shape: beam
