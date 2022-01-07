@@ -35,6 +35,7 @@ main = do
     `additionalKeysP`
     [ ("M-f", sendMessage ToggleLayout)
     , ("M-p", spawn myLauncher)
+    , ("M-b", spawn myBrowser)
     ]
 
 
