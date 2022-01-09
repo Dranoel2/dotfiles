@@ -1,3 +1,4 @@
 configuration {
+  modi: "run";
 }
 @theme "dranoelsTheme"

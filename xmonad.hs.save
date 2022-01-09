@@ -11,15 +11,12 @@ import XMonad.Layout.Spacing
 import XMonad.Util.SpawnOnce
 import XMonad.Layout.ResizableTile (ResizableTall(..))
 import XMonad.Util.EZConfig
-import XMonad.Actions.PhysicalScreens
-import Data.Default
-import qualified XMonad.StackSet as W
 
 --------------------------------------------------------------------------------
 
 main = do
   xmproc <- spawnPipe "xmobar -x 0 ~/.dotfiles/xmobarrc"
-  xmonad $ docks def
+  xmonad $ docks desktopConfig
     { modMask            = myModMask
     , normalBorderColor  = myBorderColor
     , focusedBorderColor = myFocusedColor
@@ -37,14 +34,8 @@ main = do
     }
     `additionalKeysP`
     [ ("M-f", sendMessage ToggleLayout)
-
     , ("M-p", spawn myLauncher)
-    , ("M-S-b", spawn myBrowser)
-
-    , ("M-]", onNextNeighbour def W.view)
-    , ("M-[", onPrevNeighbour def W.view)
-    , ("M-S-]", onNextNeighbour def W.shift)
-    , ("M-S-[", onPrevNeighbour def W.shift)
+    , ("M-B", spawn myBrowser)
     ]
 
 

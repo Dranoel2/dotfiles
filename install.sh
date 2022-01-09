@@ -13,3 +13,6 @@ ln -sf $(pwd)/rofiConfig.rasi ../.config/rofi/config.rasi
 ln -sf $(pwd)/rofiTheme.rasi ../.config/rofi/dranoelsTheme.rasi
 
 ln -sf $(pwd)/alacritty.yml ../.alacritty.yml
+
+mkdir -p ../.config/picom
+ln -sf $(pwd)/picom.conf ../.config/picom/picom.conf

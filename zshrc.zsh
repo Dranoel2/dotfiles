@@ -13,9 +13,7 @@ source /usr/share/nvm/init-nvm.sh
 PS1='%F{cyan}%2~ %F{yellow}%#> %f'
 export PATH="$(yarn global bin):~/.local/bin:$PATH"
 
-alias update="pac-update; aur-update"
-alias pac="doas pacman --assume-installed nodejs --assume-installed npm"
-alias aur="yay --assume-installed nodejs --assume-installed npm"
+alias pac="yay --assume-installed nodejs --assume-installed npm --assume-installed sudo --nodiffmenu --removemake"
 alias reload="source ~/.zshrc"
 
 neofetch
