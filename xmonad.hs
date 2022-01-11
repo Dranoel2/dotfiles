@@ -43,8 +43,14 @@ main = do
 
     , ("M-]", onNextNeighbour def W.view)
     , ("M-[", onPrevNeighbour def W.view)
-    , ("M-S-]", onNextNeighbour def W.shift)
-    , ("M-S-[", onPrevNeighbour def W.shift)
+    , ("M-S-]", do
+      onNextNeighbour def W.shift
+      onNextNeighbour def W.view
+      )
+    , ("M-S-[", do
+      onPrevNeighbour def W.shift
+      onPrevNeighbour def W.view
+      )
     ]
 
 
@@ -90,5 +96,6 @@ myLogHook = return ()
 myStartupHook = do
   spawnOnce "nitrogen --restore &"
   spawnOnce "picom &"
+  spawnOnce "stalonetray &"
 
 --------------------------------------------------------------------------------

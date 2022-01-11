@@ -1,11 +1,9 @@
 Config { font = "xft:Roboto Mono:weight=bold:pixelsize=11:antialias=true:hinting=true"
        , additionalFonts = [ "xft:Mononoki Nerd Font:pixelsize=11:antialias=true:hinting=true" ]
-       , borderColor = "black"
-       , border = TopB
        , bgColor = "#282c34"
        , fgColor = "#c8c8c8"
        , alpha = 255
-       , position = Top
+       , position = Static { xpos = 0, ypos = 0, width=2460, height=16}
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
@@ -34,5 +32,5 @@ Config { font = "xft:Roboto Mono:weight=bold:pixelsize=11:antialias=true:hinting
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%cpu% | %memory% * %swap% | %eth0% - %eth1% }\
-                    \{ <fc=#ee9a00>%date%</fc>| %EGPF% | %uname%"
+                    \{ <fc=#ee9a00>%date%</fc>| %EGPF% | %uname% | "
        }
