@@ -14,6 +14,7 @@ import XMonad.Util.EZConfig
 import XMonad.Actions.PhysicalScreens
 import Data.Default
 import qualified XMonad.StackSet as W
+import XMonad.Layout.Tabbed
 
 --------------------------------------------------------------------------------
 
@@ -41,6 +42,9 @@ main = do
     , ("M-p", spawn myLauncher)
     , ("M-S-b", spawn myBrowser)
 
+    , ("M-s", spawn myScreenshot)
+    , ("M-S-s", spawn myPartScreenshot)
+
     , ("M-]", onNextNeighbour def W.view)
     , ("M-[", onPrevNeighbour def W.view)
     , ("M-S-]", do
@@ -63,15 +67,17 @@ myWorkspaces     = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 myTerminal       = "alacritty"
 myBrowser        = "waterfox-g4"
 myLauncher       = "rofi -show run -theme dranoelsTheme"
+myScreenshot     = "scrot ~/Pictures/Screenshots/%Y-%m-%d-%T.png"
+myPartScreenshot = "scrot -s ~/Pictures/Screenshots/%Y-%m-%d-%T.png"
 
 -- Borders
-myBorderColor    = "#282c34"
-myFocusedColor   = "#00f0ff"
+myBorderColor    = "#2e3440"
+myFocusedColor   = "#88C0D0"
 myBorderWidth    = 5
 
 --------------------------------------------------------------------------------
 
-myLayouts = toggleLayouts (noBorders Full) (avoidStruts (myTallLayout ||| myGridLayout))
+myLayouts = toggleLayouts (noBorders Full) ( avoidStruts (myTallLayout ||| myGridLayout))
   where
     myTallLayout = spacing 5 $ Tall 1 (2/100) (2/3)
     myGridLayout = spacing 5 $ Grid
@@ -94,7 +100,7 @@ myLogHook = return ()
 --------------------------------------------------------------------------------
 
 myStartupHook = do
-  spawnOnce "nitrogen --restore &"
+  spawnOnce "feh --bg-scale --randomize ~/Pictures/backgrounds &"
   spawnOnce "picom &"
   spawnOnce "stalonetray &"
 

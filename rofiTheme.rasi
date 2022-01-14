@@ -3,28 +3,25 @@
  * Rofi version: 1.7.2
  **/
 * {
-  background-color: #282c34;
-  text-color: #ffffff;
+  background-color: #2E3440;
+  text-color: #ECEFF4;
 }
 window {
   anchor: center;
   location: center;
 }
 mainbox {
-  border: 1;
-  border-color: #00f0ff;
+  border: 5;
+  border-color: #88C0D0;
 }
 inputbar {
-  border: 1;
-  border-color: #00f0ff;
-  background-color: white;
+  background-color: #3B4252;
 }
-prompt, entry, selected {
-  background-color: white;
-  text-color: black;
+prompt, entry {
+  background-color: #3B4252;
   padding: 5;
 }
 
-element {
-
+selected {
+  background-color: #434C5E;
 }
