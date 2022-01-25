@@ -56,6 +56,8 @@ main = do
       onPrevNeighbour def W.shift
       onPrevNeighbour def W.view
       )
+
+    , ("M-S-l", spawn "light-locker-command -l")
     ]
 
 
@@ -104,8 +106,12 @@ myStartupHook = do
   spawnOnce "feh --bg-scale --randomize ~/Pictures/backgrounds &"
   spawnOnce "picom &"
   spawnOnce "stalonetray &"
+<<<<<<< HEAD
   spawnOnce "dunst &"
   spawnOnce "discord --start-minimized &"
   spawnOnce "lxsession &"
+=======
+  spawnOnce "light-locker &"
+>>>>>>> a9d8028f923694f7d9224135b8f0b7818c84abab
 
 --------------------------------------------------------------------------------
