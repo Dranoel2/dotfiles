@@ -15,6 +15,7 @@ import XMonad.Actions.PhysicalScreens
 import Data.Default
 import qualified XMonad.StackSet as W
 import XMonad.Layout.Tabbed
+import XMonad.Layout.MultiColumns
 
 --------------------------------------------------------------------------------
 
@@ -77,10 +78,10 @@ myBorderWidth    = 5
 
 --------------------------------------------------------------------------------
 
-myLayouts = toggleLayouts (noBorders Full) ( avoidStruts (myTallLayout ||| myGridLayout))
+myLayouts = toggleLayouts (noBorders Full) ( avoidStruts (myTallLayout ||| myColumnLayout) )
   where
     myTallLayout = spacing 5 $ Tall 1 (2/100) (2/3)
-    myGridLayout = spacing 5 $ Grid
+    myColumnLayout = multiCol [1] 1 0.01 (-0.5)
 
 --------------------------------------------------------------------------------
 
@@ -103,5 +104,8 @@ myStartupHook = do
   spawnOnce "feh --bg-scale --randomize ~/Pictures/backgrounds &"
   spawnOnce "picom &"
   spawnOnce "stalonetray &"
+  spawnOnce "dunst &"
+  spawnOnce "discord --start-minimized &"
+  spawnOnce "lxsession &"
 
 --------------------------------------------------------------------------------

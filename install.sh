@@ -17,3 +17,7 @@ ln -sf $(pwd)/alacritty.yml ../.alacritty.yml
 
 mkdir -p ../.config/picom
 ln -sf $(pwd)/picom.conf ../.config/picom/picom.conf
+
+mkdir -p ../.config/dunst
+ln -sf $(pwd)/dunstrc ../.config/dunst/dunstrc
+
