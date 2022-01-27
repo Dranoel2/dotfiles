@@ -1,0 +1,9 @@
+[submodule "alacritty"]
+	path = alacritty
+	url = https://github.com/dracula/alacritty
+[submodule "rofi"]
+	path = rofi
+	url = https://github.com/dracula/rofi
+[submodule "dunst"]
+	path = dunst
+	url = https://github.com/dracula/dunst.git
