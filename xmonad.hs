@@ -69,13 +69,13 @@ myWorkspaces     = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 -- Default Apps
 myTerminal       = "alacritty"
 myBrowser        = "waterfox-g4"
-myLauncher       = "rofi -show run -theme dranoelsTheme"
+myLauncher       = "rofi -show run"
 myScreenshot     = "scrot ~/Pictures/Screenshots/%Y-%m-%d-%T.png"
 myPartScreenshot = "scrot -s ~/Pictures/Screenshots/%Y-%m-%d-%T.png"
 
 -- Borders
-myBorderColor    = "#2e3440"
-myFocusedColor   = "#88C0D0"
+myBorderColor    = "#282a36"
+myFocusedColor   = "#bd93f9"
 myBorderWidth    = 5
 
 --------------------------------------------------------------------------------
@@ -103,15 +103,12 @@ myLogHook = return ()
 --------------------------------------------------------------------------------
 
 myStartupHook = do
-  spawnOnce "feh --bg-scale --randomize ~/Pictures/backgrounds &"
+  spawnOnce "feh --bg-scale --randomize ~/Pictures/Backgrounds &"
   spawnOnce "picom &"
   spawnOnce "stalonetray &"
-<<<<<<< HEAD
   spawnOnce "dunst &"
   spawnOnce "discord --start-minimized &"
   spawnOnce "lxsession &"
-=======
   spawnOnce "light-locker &"
->>>>>>> a9d8028f923694f7d9224135b8f0b7818c84abab
 
 --------------------------------------------------------------------------------

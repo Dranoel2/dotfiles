@@ -1,4 +1,4 @@
 configuration {
   modi: "run";
 }
-@theme "dranoelsTheme"
+@theme "draculaTheme.rasi"

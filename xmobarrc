@@ -1,7 +1,7 @@
 Config { font = "xft:Roboto Mono:weight=bold:pixelsize=11:antialias=true:hinting=true"
        , additionalFonts = [ "xft:Mononoki Nerd Font:pixelsize=11:antialias=true:hinting=true" ]
-       , bgColor = "#2e3440"
-       , fgColor = "#eceff4"
+       , bgColor = "#282a36"
+       , fgColor = "#f8f8f2"
        , alpha = 255
        , position = Static { xpos = 0, ypos = 0, width=2460, height=16}
        , textOffset = -1
