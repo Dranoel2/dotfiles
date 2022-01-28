@@ -18,7 +18,7 @@ zstyle ':vcs_info:git:*' formats '%K{yellow}%F{black}  %b %F{yellow}'
 source /usr/share/nvm/init-nvm.sh
 
 setopt prompt_subst
-PROMPT='%K{blue}%F{black} %2~ %F{blue}${vcs_info_msg_0_}%k %f'
+PROMPT='%(?..%F{red} %? %F{blue})%K{blue}%F{black}  %2~ %F{blue}${vcs_info_msg_0_}%k %f'
 
 export PATH="$(yarn global bin):$PATH"
 
