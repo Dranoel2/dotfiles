@@ -1,9 +1,9 @@
-Config { font = "xft:Roboto Mono:weight=bold:pixelsize=11:antialias=true:hinting=true"
-       , additionalFonts = [ "xft:Mononoki Nerd Font:pixelsize=11:antialias=true:hinting=true" ]
+Config { font = "xft:Roboto Mono:weight=bold:pixelsize=20:antialias=true:hinting=true"
+       , additionalFonts = [ "xft:JetbrainsMono Nerd Font:pixelsize=11:antialias=true:hinting=true" ]
        , bgColor = "#282a36"
        , fgColor = "#f8f8f2"
        , alpha = 255
-       , position = Static { xpos = 0, ypos = 0, width=2460, height=16}
+       , position = Static { xpos = 0, ypos = 0, width=2695, height=21}
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
