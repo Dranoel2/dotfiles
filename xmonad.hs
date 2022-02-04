@@ -20,7 +20,6 @@ import XMonad.Layout.MultiColumns
 --------------------------------------------------------------------------------
 
 main = do
-  xmproc <- spawnPipe "xmobar -x 0 ~/.dotfiles/xmobarrc"
   xmonad $ docks def
     { modMask            = myModMask
     , normalBorderColor  = myBorderColor

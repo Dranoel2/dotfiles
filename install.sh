@@ -7,7 +7,7 @@ ln -sf $(pwd)/stalonetrayrc ../.stalonetrayrc
 mkdir -p ../.xmonad
 ln -sf $(pwd)/xmonad.hs ../.xmonad/xmonad.hs
 
-ln -sf $(pwd)/xmobarrc  ../.xmobarrc
+ln -sf $(pwd)/xmobar.hs ../.xmobar.hs
 
 mkdir -p ../.config/rofi
 ln -sf $(pwd)/rofiConfig.rasi ../.config/rofi/config.rasi
