@@ -73,8 +73,8 @@ myScreenshot     = "scrot ~/Pictures/Screenshots/%Y-%m-%d-%T.png"
 myPartScreenshot = "scrot -s ~/Pictures/Screenshots/%Y-%m-%d-%T.png"
 
 -- Borders
-myBorderColor    = "#282a36"
-myFocusedColor   = "#bd93f9"
+myBorderColor    = "#bd93f9"
+myFocusedColor   = "#50fa7b"
 myBorderWidth    = 5
 
 --------------------------------------------------------------------------------
@@ -102,7 +102,7 @@ myLogHook = return ()
 --------------------------------------------------------------------------------
 
 myStartupHook = do
-  spawnOnce "feh --bg-scale --randomize ~/Pictures/Backgrounds &"
+  spawnOnce "feh --bg-fill ~/.dotfiles/wallpaper/base.png"
   spawnOnce "picom &"
   spawnOnce "stalonetray &"
   spawnOnce "dunst &"

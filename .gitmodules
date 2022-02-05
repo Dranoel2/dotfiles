@@ -7,3 +7,18 @@
 [submodule "dunst"]
 	path = dunst
 	url = https://github.com/dracula/dunst.git
+[submodule "vim"]
+	path = vim
+	url = https://github.com/dracula/vim.git
+[submodule "gtk"]
+	path = gtk
+	url = https://github.com/dracula/gtk.git
+[submodule "wallpaper"]
+	path = wallpaper
+	url = https://github.com/dracula/wallpaper.git
+[submodule "grub"]
+	path = grub
+	url = https://github.com/dracula/grub.git
+[submodule "qt5"]
+	path = qt5
+	url = https://github.com/dracula/qt5.git
