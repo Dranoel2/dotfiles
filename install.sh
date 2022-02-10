@@ -6,7 +6,7 @@ mkdir -p ~/.vim/pack/themes/start
 ln -sf $(pwd)/vim ~/.vim/pack/themes/start/dracula
 
 mkdir -p ~/.themes
-ln -sf $(pwd)/gtk ~/.themes/dracula
+ln -sf $(pwd)/gtk ~/.themes/Dracula
 gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
 gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
 
@@ -40,3 +40,10 @@ ln -sf $(pwd)/dunst/dunstrc ~/.config/dunst/dunstrc
 
 mkdir -p ~/.vim
 ln -sf $(pwd)/vimrc ~/.vimrc
+
+mkdir -p ~/.config/ranger
+ln -sf $(pwd)/rc.conf ~/.config/rc.conf
+ln -sf $(pwd)/rifle.conf ~/.config/rifle.conf
+
+mkdir -p ~/.config/i3
+ln -sf $(pwd)/i3 ~/.config/i3/config

@@ -27,4 +27,7 @@ alias ll="ls -la"
 
 export EDITOR=vim
 
-neofetch
+if [ ! -f /tmp/openedShell ]; then
+	touch /tmp/openedShell
+	neofetch
+fi
