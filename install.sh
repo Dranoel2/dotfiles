@@ -5,16 +5,15 @@
 mkdir -p ~/.vim/pack/themes/start
 ln -sf $(pwd)/vim ~/.vim/pack/themes/start/dracula
 
-mkdir -p ~/.themes
-ln -sf $(pwd)/gtk ~/.themes/Dracula
-gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
-gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
-
-echo "Make sure to change the grub theme to \"$(pwd)/grub/themes/dracula\""
+echo "Make sure to change the grub theme to \"$(pwd)/grub/dracula/theme.txt\""
 
 mkdir -p ~/.config/qt5ct/colors
 ln -sf $(pwd)/qt5/Dracula.conf ~/.config/qt5ct/colors/Dracula.conf
-echo "Make sure to change the qt5ct theme to \"Dracula\""
+ln -sf $(pwd)/qt5ct.conf ~/.config/qt5ct/qt5ct.conf
+
+mkdir -p ~/.config/gtk-3.0
+ln -sf $(pwd)/gtk3settings.ini ~/.config/gtk-3.0/settings.ini
+ln -sf $(pwd)/gtkrc-2.0 ~/.gtkrc-2.0
 
 # Config Files
 cd $(dirname "$0")
