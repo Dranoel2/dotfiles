@@ -17,6 +17,9 @@ ln -sf $(pwd)/gtkrc-2.0 ~/.gtkrc-2.0
 
 ln -sf $(pwd)/xresources/Xresources ~/.Xresources
 
+mkdir -p ~/.config/ranger/colorschemes
+ln -sf $(pwd)/ranger/dracula.py ~/.config/ranger/colorschemes/dracula.py
+
 # Config Files
 cd $(dirname "$0")
 

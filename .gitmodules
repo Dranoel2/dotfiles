@@ -25,3 +25,6 @@
 [submodule "xresources"]
 	path = xresources
 	url = https://github.com/dracula/xresources.git
+[submodule "ranger"]
+	path = ranger
+	url = https://github.com/dracula/ranger.git
