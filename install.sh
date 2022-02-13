@@ -15,6 +15,8 @@ mkdir -p ~/.config/gtk-3.0
 ln -sf $(pwd)/gtk3settings.ini ~/.config/gtk-3.0/settings.ini
 ln -sf $(pwd)/gtkrc-2.0 ~/.gtkrc-2.0
 
+ln -sf $(pwd)/xresources/Xresources ~/.Xresources
+
 # Config Files
 cd $(dirname "$0")
 

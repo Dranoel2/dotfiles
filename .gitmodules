@@ -22,3 +22,6 @@
 [submodule "qt5"]
 	path = qt5
 	url = https://github.com/dracula/qt5.git
+[submodule "xresources"]
+	path = xresources
+	url = https://github.com/dracula/xresources.git
