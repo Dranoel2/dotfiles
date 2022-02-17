@@ -25,7 +25,8 @@ alias reload="source ~/.zshrc"
 alias fm=". ranger"
 alias ll="ls -la"
 
-export EDITOR=vim
+export EDITOR="nvim -p"
+export PAGER="less"
 
 if [ ! -f /tmp/openedShell ]; then
 	touch /tmp/openedShell

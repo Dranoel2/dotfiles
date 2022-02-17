@@ -12,7 +12,7 @@ client.background #282a36
 
 # startup apps
 exec picom
-exec_always feh --bg-fill ~/.dotfiles/wallpaper/arch.png
+exec feh --bg-fill ~/.dotfiles/wallpaper/dracula-wallpaper.svg
 exec dunst
 exec discord --start-minimized
 exec lxsession
@@ -24,7 +24,7 @@ floating_modifier $mod
 bindsym $mod+Shift+Return exec alacritty
 
 # start a browser
-bindsym $mod+Shift+b exec waterfox-g4
+bindsym $mod+Shift+b exec firefox
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -126,3 +126,13 @@ mode "resize" {
 }
 
 bindsym $mod+z mode "resize"
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous

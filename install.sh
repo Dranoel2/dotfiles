@@ -2,8 +2,8 @@
 
 # Themes
 
-mkdir -p ~/.vim/pack/themes/start
-ln -sf $(pwd)/vim ~/.vim/pack/themes/start/dracula
+mkdir -p ~/.config/nvim/pack/themes/start
+ln -sf $(pwd)/vim ~/.config/nvim/pack/themes/start/dracula
 
 echo "Make sure to change the grub theme to \"$(pwd)/grub/dracula/theme.txt\""
 
@@ -42,12 +42,12 @@ ln -sf $(pwd)/picom.conf ~/.config/picom/picom.conf
 mkdir -p ~/.config/dunst
 ln -sf $(pwd)/dunst/dunstrc ~/.config/dunst/dunstrc
 
-mkdir -p ~/.vim
-ln -sf $(pwd)/vimrc ~/.vimrc
+mkdir -p ~/.config/nvim
+ln -sf $(pwd)/init.vim ~/.config/nvim/init.vim
 
 mkdir -p ~/.config/ranger
-ln -sf $(pwd)/rc.conf ~/.config/rc.conf
-ln -sf $(pwd)/rifle.conf ~/.config/rifle.conf
+ln -sf $(pwd)/rc.conf ~/.config/ranger/rc.conf
+ln -sf $(pwd)/rifle.conf ~/.config/ranger/rifle.conf
 
 mkdir -p ~/.config/i3
 ln -sf $(pwd)/i3 ~/.config/i3/config
