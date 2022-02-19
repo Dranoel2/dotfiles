@@ -2,9 +2,6 @@
 
 # Themes
 
-mkdir -p ~/.config/nvim/pack/themes/start
-ln -sf $(pwd)/vim ~/.config/nvim/pack/themes/start/dracula
-
 echo "Make sure to change the grub theme to \"$(pwd)/grub/dracula/theme.txt\""
 
 mkdir -p ~/.config/qt5ct/colors
@@ -21,6 +18,7 @@ mkdir -p ~/.config/ranger/colorschemes
 ln -sf $(pwd)/ranger/dracula.py ~/.config/ranger/colorschemes/dracula.py
 
 # Config Files
+
 cd $(dirname "$0")
 
 ln -sf $(pwd)/zshrc ~/.zshrc
@@ -42,8 +40,9 @@ ln -sf $(pwd)/picom.conf ~/.config/picom/picom.conf
 mkdir -p ~/.config/dunst
 ln -sf $(pwd)/dunst/dunstrc ~/.config/dunst/dunstrc
 
-mkdir -p ~/.config/nvim
-ln -sf $(pwd)/init.vim ~/.config/nvim/init.vim
+mkdir -p ~/.config/nvim/autoload
+ln -sf $(pwd)/init.lua ~/.config/nvim/init.lua
+ln -sf $(pwd)/vim-plug/plug.vim ~/.config/nvim/autoload/plug.vim
 
 mkdir -p ~/.config/ranger
 ln -sf $(pwd)/rc.conf ~/.config/ranger/rc.conf

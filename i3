@@ -1,6 +1,4 @@
 set $mod Mod4
-
-# styling
 new_window 1pixel
 gaps inner 10
 font pango:JetbrainsMono Nerd Font 9

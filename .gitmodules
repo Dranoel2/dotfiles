@@ -28,3 +28,12 @@
 [submodule "ranger"]
 	path = ranger
 	url = https://github.com/dracula/ranger.git
+[submodule "nvim-lspconfig"]
+	path = nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig.git
+[submodule "nvim-lsp-installer"]
+	path = nvim-lsp-installer
+	url = https://github.com/williamboman/nvim-lsp-installer.git
+[submodule "vim-plug"]
+	path = vim-plug
+	url = https://github.com/junegunn/vim-plug.git
