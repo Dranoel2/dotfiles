@@ -1,12 +1,15 @@
 set $mod Mod4
 new_window 1pixel
+default_floating_border pixel 1
 gaps inner 10
-font pango:JetbrainsMono Nerd Font 9
+font pango:JetbrainsMono Nerd Font 11
 
 client.focused #50fa7b #282a36 #f8f8f2 #f1fa8c #50fa7b 
 client.unfocused #282a36 #282a36 #f8f8f2 #282a36 #282a36
 client.focused_inactive #bd93f9 #282a36 #f8f8f2 #bd93f9 #bd93f9
 client.background #282a36
+
+popup_during_fullscreen smart
 
 # startup apps
 exec picom

@@ -4,7 +4,6 @@ vim.cmd([[
   Plug 'dracula/vim',{'name':'dracula'}
 
   Plug 'neovim/nvim-lspconfig'
-  Plug 'williamboman/nvim-lsp-installer'
 
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
@@ -25,14 +24,6 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.number = true
-local lsp_installer = require("nvim-lsp-installer")
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-lsp_installer.on_server_ready(function (server)
-  local opts = { capabilities = capabilities }
-
-  server:setup(opts)
-end)
 
 vim.cmd([[
   sign define LspDiagnosticsSignError text=
@@ -42,7 +33,6 @@ vim.cmd([[
 ]])
 
 local set = vim.api.nvim_set_keymap
-
 set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
 set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', { noremap = true, silent = true })
 set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
@@ -61,12 +51,12 @@ vim.opt.completeopt = "menu,menuone,noselect"
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args,body)
+      vim.fn["vsnip#anonymous"](args.body)
     end,
   },
   mapping = {
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }), 
-    ['<C-l>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-Space>'] = cmp.mapping.complete(), 
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -75,3 +65,9 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
+
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local lsp = require("lspconfig")
+
+lsp.jdtls.setup({ capabilities = capabilities, cmd = { "jdtls", "-data", os.getenv("HOME") .. "/.jtdls-workspace" } })
+lsp.tailwindcss.setup({capabilities = capabilities })

@@ -20,7 +20,7 @@ PROMPT='%(?..%F{red} %? %F{blue})%K{blue}%F{black}  %2~ %F{blue}${vcs_info
 
 export PATH="$(yarn global bin):$PATH"
 
-alias pac="yay --nodiffmenu --removemake"
+alias pac="yay --nodiffmenu --removemake --assume-installed xdg-utils"
 alias reload="source ~/.zshrc"
 alias fm=". ranger"
 alias ll="ls -la"
