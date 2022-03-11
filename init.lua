@@ -4,8 +4,8 @@ vim.cmd([[
   Plug 'dracula/vim',{'name':'dracula'}
 
   Plug 'neovim/nvim-lspconfig'
-
   Plug 'hrsh7th/cmp-nvim-lsp'
+
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-cmdline'
@@ -13,6 +13,8 @@ vim.cmd([[
 
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
+
+  Plug 'vimwiki/vimwiki'
 
   call plug#end()
 ]])
@@ -71,3 +73,4 @@ local lsp = require("lspconfig")
 
 lsp.jdtls.setup({ capabilities = capabilities, cmd = { "jdtls", "-data", os.getenv("HOME") .. "/.jtdls-workspace" } })
 lsp.tailwindcss.setup({capabilities = capabilities })
+lsp.svelte.setup{}

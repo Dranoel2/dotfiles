@@ -51,4 +51,6 @@ ln -sf $(pwd)/rifle.conf ~/.config/ranger/rifle.conf
 mkdir -p ~/.config/i3
 ln -sf $(pwd)/i3 ~/.config/i3/config
 
+ln -sf $(pwd)/xinitrc ~/.xinitrc
+
 ln -sf $(pwd)/mimeapps.list ~/.config/mimeapps.list
