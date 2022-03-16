@@ -54,3 +54,6 @@ ln -sf $(pwd)/i3 ~/.config/i3/config
 ln -sf $(pwd)/xinitrc ~/.xinitrc
 
 ln -sf $(pwd)/mimeapps.list ~/.config/mimeapps.list
+
+mkdir -p ~/.config/polybar
+ln -sf $(pwd)/polybar.ini ~/.config/polybar/config.ini

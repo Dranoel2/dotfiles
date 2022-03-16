@@ -74,3 +74,4 @@ local lsp = require("lspconfig")
 lsp.jdtls.setup({ capabilities = capabilities, cmd = { "jdtls", "-data", os.getenv("HOME") .. "/.jtdls-workspace" } })
 lsp.tailwindcss.setup({capabilities = capabilities })
 lsp.svelte.setup{}
+lsp.elmls.setup{}
