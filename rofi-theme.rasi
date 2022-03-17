@@ -1,0 +1,38 @@
+* {
+  font: "Jetbrains Mono 11";
+  border: #bd93f9;
+  background-color: #282a36;
+  text-color: #f8f8f2;
+}
+
+mainbox {
+ border-color: #50fa7b;
+ border: 1px solid;
+ padding: 5px;
+}
+
+inputbar {
+  border-color: @border;
+  border: 1px solid;
+  padding: 5px;
+}
+
+prompt {
+  enabled: false;
+}
+
+listview {
+  padding: 10px 0px 0px;
+}
+
+element {
+  padding: 2px;
+}
+
+element-text {
+  background-color: inherit;
+}
+
+element.selected.normal {
+  background-color: #44475a;
+}

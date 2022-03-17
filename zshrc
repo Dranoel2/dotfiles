@@ -2,7 +2,7 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
 
-source ~/.dotfiles/tty/dracula-tty.sh
+source ~/.dotfiles/dracula-tty.sh
 
 export LANG=en_GB.UTF-8
 HISTFILE=~/.histfile

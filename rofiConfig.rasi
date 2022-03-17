@@ -1,4 +1,0 @@
-configuration {
-  modi: "run,ssh";
-}
-@theme "draculaTheme.rasi"

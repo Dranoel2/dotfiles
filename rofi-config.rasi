@@ -1,0 +1,4 @@
+configuration {
+  modi: "run";
+}
+@theme "dracula-theme.rasi"

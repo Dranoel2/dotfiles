@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
+~/.fehbg
 picom &
-feh --bg-fill ~/.dotfiles/wallpaper/dracula-wallpaper.svg &
 dunst &
 /usr/bin/discord --start-minimized &
 lxsession &
