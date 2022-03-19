@@ -8,4 +8,4 @@ lxsession &
 /usr/bin/thunderbird &
 polybar &
 
-exec dbus-launch i3
+exec dbus-launch bspwm
