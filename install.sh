@@ -64,3 +64,9 @@ ln -sf $(pwd)/mimeapps.list ~/.config/mimeapps.list
 
 mkdir -p ~/.config/polybar
 ln -sf $(pwd)/polybar.ini ~/.config/polybar/config.ini
+
+mkdir -p ~/.config/sxhkd
+ln -sf $(pwd)/sxhkdrc ~/.config/sxhkd/sxhkdrc
+
+mkdir -p ~/.config/bspwm
+ln -sf $(pwd)/bspwmrc ~/.config/bspwm/bspwmrc
