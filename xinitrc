@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
 ~/.fehbg
+
 picom &
 dunst &
 /usr/bin/discord --start-minimized &
 lxsession &
 /usr/bin/thunderbird &
-polybar &
+polybar left &
+polybar right &
 
-exec dbus-launch bspwm
+exec dbus-launch i3

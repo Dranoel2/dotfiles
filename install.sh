@@ -48,7 +48,7 @@ mkdir -p ~/.config/dunst
 ln -sf $(pwd)/dunstrc ~/.config/dunst/dunstrc
 
 mkdir -p ~/.config/nvim/autoload
-ln -sf $(pwd)/init.lua ~/.config/nvim/init.lua
+ln -sf $(pwd)/init.vim ~/.config/nvim/init.vim
 ln -sf $(pwd)/plug.vim ~/.config/nvim/autoload/plug.vim
 
 mkdir -p ~/.config/ranger
