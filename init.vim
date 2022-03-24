@@ -44,18 +44,18 @@ nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>a  <cmd>lua vim.lsp.buf.code_action()<CR>
 xmap     <silent> <leader>a  <cmd>lua vim.lsp.buf.code_action()<CR>
 
-:command Reload :source ~/.config/nvim/init.vim 
+command Reload :source ~/.config/nvim/init.vim
 
 lua << EOF
 
-local cmp = require("cmp")
+local cmp = require 'cmp'
 
-vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.completeopt = 'menu,menuone,noselect'
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      vim.fn['vsnip#anonymous'](args.body)
     end,
   },
   mapping = {
@@ -71,7 +71,7 @@ cmp.setup({
 })
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-local lsp = require("lspconfig")
+local lsp = require 'lspconfig'
 
 function conf(table) 
   base = { capabilities = capabilities };
@@ -79,7 +79,7 @@ function conf(table)
   return base;
 end
 
-lsp.jdtls.setup(conf{cmd = { "bash", os.getenv("HOME") .. "/.dotfiles/jdtls.sh"} })
+lsp.jdtls.setup(conf{cmd = { 'bash', os.getenv('HOME') .. '/.dotfiles/jdtls.sh'} })
 lsp.tailwindcss.setup(conf{})
 lsp.svelte.setup(conf{})
 lsp.elmls.setup(conf{})
