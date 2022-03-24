@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.config/nvim/plugins')
 
 Plug 'dracula/vim',{'name':'dracula'}
 
@@ -44,6 +44,8 @@ nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>a  <cmd>lua vim.lsp.buf.code_action()<CR>
 xmap     <silent> <leader>a  <cmd>lua vim.lsp.buf.code_action()<CR>
 
+:command Reload :source ~/.config/nvim/init.vim 
+
 lua << EOF
 
 local cmp = require("cmp")
@@ -58,7 +60,7 @@ cmp.setup({
   },
   mapping = {
     ['<C-Space>'] = cmp.mapping.complete(), 
-    ['<C-R>'] = cmp.mapping.confirm({ select = false }),
+    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -71,12 +73,16 @@ cmp.setup({
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local lsp = require("lspconfig")
 
-lsp.jdtls.setup{ capabilities = capabilities, cmd = { "jdtls", "-data", os.getenv("HOME") .. "/.jtdls-workspace" } }
-lsp.tailwindcss.setup{ capabilities = capabilities }
-lsp.svelte.setup{ capabilities = capabilities }
-lsp.elmls.setup{ capabilities = capabilities }
-lsp.ccls.setup{ capabilities = capabilities }
+function conf(table) 
+  base = { capabilities = capabilities };
+  for k,v in pairs(table) do base[k] = v end;
+  return base;
+end
+
+lsp.jdtls.setup(conf{cmd = { "bash", os.getenv("HOME") .. "/.dotfiles/jdtls.sh"} })
+lsp.tailwindcss.setup(conf{})
+lsp.svelte.setup(conf{})
+lsp.elmls.setup(conf{})
+lsp.ccls.setup(conf{})
  
 EOF
-
-:command Reload :source ~/.config/nvim/init.vim 
