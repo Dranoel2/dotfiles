@@ -1,8 +1,7 @@
 set $mod Mod4
-new_window 1pixel
+default_border pixel 1
 default_floating_border pixel 1
 gaps inner 10
-gaps top 34
 font pango:JetbrainsMono Nerd Font 11
 
 client.focused #50fa7b #282a36 #f8f8f2 #f1fa8c #50fa7b 

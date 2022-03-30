@@ -9,11 +9,10 @@ ln -sf $(pwd)/qt5ct/qt5ct-colours.conf ~/.config/qt5ct/colors/Dracula.conf
 ln -sf $(pwd)/qt5ct/qt5ct.conf ~/.config/qt5ct/qt5ct.conf
 
 mkdir -p ~/.themes
-if [ -d ~/.themes/Dracula ]
+if ! [ -d ~/.themes/Dracula ]
 then
-  unlink ~/.themes/Dracula
+  ln -sf $(pwd)/gtk ~/.themes/Dracula
 fi
-ln -sf $(pwd)/gtk ~/.themes/Dracula
 
 mkdir -p ~/.config/gtk-3.0
 ln -sf $(pwd)/gtk3.ini ~/.config/gtk-3.0/settings.ini

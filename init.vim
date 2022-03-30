@@ -23,9 +23,8 @@ let g:dracula_colorterm=0
 colorscheme dracula
 
 set autochdir
-set tabstop=2
-set shiftwidth=2
-set expandtab
+set tabstop=4
+set shiftwidth=4
 set number
 
 sign define LspDiagnosticsSignError text=
@@ -84,5 +83,6 @@ lsp.tailwindcss.setup(conf{})
 lsp.svelte.setup(conf{})
 lsp.elmls.setup(conf{})
 lsp.ccls.setup(conf{})
+lsp.eslint.setup(conf{})
  
 EOF

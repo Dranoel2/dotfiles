@@ -28,13 +28,20 @@ export PATH="$(yarn global bin):$PATH"
 
 alias pac="yay --nodiffmenu --removemake --assume-installed xdg-utils"
 alias reload="source ~/.zshrc"
-alias fm=". ranger"
 alias ll="ls -la"
 
 export EDITOR="nvim -p"
 export PAGER="less"
 
+export RANGER_LOAD_DEFAULT_RC=false
+
 if [ ! -f /tmp/openedShell ]; then
 	touch /tmp/openedShell
 	neofetch
 fi
+
+fm() {
+  CHOSEN_DIR=$(mktemp /tmp/ranger.XXXXXXX)
+  ranger --choosedir $CHOSEN_DIR
+  cd $(cat $CHOSEN_DIR)
+}
