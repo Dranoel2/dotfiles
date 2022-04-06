@@ -1,3 +1,4 @@
+" Plugins ----------------------------------------------------------------- {{{
 call plug#begin('~/.config/nvim/plugins')
 
 Plug 'dracula/vim',{'name':'dracula'}
@@ -17,21 +18,25 @@ Plug 'vimwiki/vimwiki'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 call plug#end()
+" }}}
 
-
+" Colours ----------------------------------------------------------------- {{{
 let g:dracula_colorterm=0
 colorscheme dracula
+highlight ColorColumn ctermbg=8
+" }}}
 
+" Settings ---------------------------------------------------------------- {{{
 set autochdir
+set noexpandtab
 set tabstop=4
 set shiftwidth=4
 set number
+set colorcolumn=80
+set foldmethod=marker
+" }}}
 
-sign define LspDiagnosticsSignError text=
-sign define LspDiagnosticsSignWarning text=
-sign define LspDiagnosticsSignInformation text=
-sign define LspDiagnosticsSignHint text=
-
+" Keybinds ---------------------------------------------------------------- {{{
 nnoremap <silent> gd         <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gi         <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gr         <cmd>lua vim.lsp.buf.references()<CR>
@@ -42,8 +47,17 @@ nnoremap <silent> <leader>f  <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>a  <cmd>lua vim.lsp.buf.code_action()<CR>
 xmap     <silent> <leader>a  <cmd>lua vim.lsp.buf.code_action()<CR>
+" }}}
 
+" Commands ---------------------------------------------------------------- {{{
 command Reload :source ~/.config/nvim/init.vim
+" }}}
+
+" Autocomplete ----------------------------------------------------- {{{
+sign define LspDiagnosticsSignError text=
+sign define LspDiagnosticsSignWarning text=
+sign define LspDiagnosticsSignInformation text=
+sign define LspDiagnosticsSignHint text=
 
 lua << EOF
 
@@ -69,7 +83,8 @@ cmp.setup({
   })
 })
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp')
+	.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local lsp = require 'lspconfig'
 
 function conf(table) 
@@ -78,7 +93,9 @@ function conf(table)
   return base;
 end
 
-lsp.jdtls.setup(conf{cmd = { 'bash', os.getenv('HOME') .. '/.dotfiles/jdtls.sh'} })
+local home = os.getenv("HOME")
+
+lsp.jdtls.setup(conf{cmd = { 'bash', home .. '/.dotfiles/jdtls.sh'} })
 lsp.tailwindcss.setup(conf{})
 lsp.svelte.setup(conf{})
 lsp.elmls.setup(conf{})
@@ -86,3 +103,4 @@ lsp.ccls.setup(conf{})
 lsp.eslint.setup(conf{})
  
 EOF
+" }}}

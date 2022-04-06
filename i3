@@ -29,6 +29,9 @@ bindsym $mod+p exec --no-startup-id rofi -show run
 bindsym $mod+minus scratchpad show
 for_window [class="Thunderbird"] move scratchpad
 
+bindsym Print exec scrot ~/Pictures/Screenshots/%Y-%m-%d-%T.png
+bindsym Shift+Print exec sleep 0.2 && scrot -s ~/Pictures/Screenshots/%Y-%m-%d-%T.png
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down

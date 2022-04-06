@@ -30,7 +30,7 @@ alias pac="yay --nodiffmenu --removemake --assume-installed xdg-utils"
 alias reload="source ~/.zshrc"
 alias ll="ls -la"
 
-export EDITOR="nvim -p"
+export EDITOR="nvim"
 export PAGER="less"
 
 export RANGER_LOAD_DEFAULT_RC=false
@@ -45,3 +45,5 @@ fm() {
   ranger --choosedir $CHOSEN_DIR
   cd $(cat $CHOSEN_DIR)
 }
+
+eval $(keychain --eval id_ed25519 -q)
