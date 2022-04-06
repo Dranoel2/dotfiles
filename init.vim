@@ -15,15 +15,17 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
 Plug 'vimwiki/vimwiki'
+
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'lukas-reineke/virt-column.nvim'
 
 call plug#end()
 " }}}
 
 " Colours ----------------------------------------------------------------- {{{
+set termguicolors
 let g:dracula_colorterm=0
 colorscheme dracula
-highlight ColorColumn ctermbg=8
 " }}}
 
 " Settings ---------------------------------------------------------------- {{{
@@ -34,6 +36,7 @@ set shiftwidth=4
 set number
 set colorcolumn=80
 set foldmethod=marker
+set cursorline
 " }}}
 
 " Keybinds ---------------------------------------------------------------- {{{
@@ -102,5 +105,14 @@ lsp.elmls.setup(conf{})
 lsp.ccls.setup(conf{})
 lsp.eslint.setup(conf{})
  
+EOF
+" }}}
+
+" Plugin Config ----------------------------------------------------------- {{{
+lua << EOF
+
+require("indent_blankline").setup {}
+require("virt-column").setup {}
+
 EOF
 " }}}
