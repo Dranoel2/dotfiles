@@ -29,10 +29,10 @@ precmd() {
   vcs_info
 }
 
-zstyle ':vcs_info:git:*' formats '%K{yellow}%F{black}  %b %F{yellow}'
+zstyle ':vcs_info:git:*' formats '  %b '
 
 setopt prompt_subst
-PROMPT='%(?..%F{red} %? %F{blue})%K{blue}%F{black}  %2~ %F{blue}${vcs_info_msg_0_}%k %f'
+PROMPT='%(?..%F{red} %? %F{blue})%K{blue}%F{black}  %2~ %F{blue}%K{yellow}%F{black}${vcs_info_msg_0_}%F{yellow}%k %f'
 
 
 alias pac="yay --nodiffmenu --removemake --assume-installed xdg-utils"

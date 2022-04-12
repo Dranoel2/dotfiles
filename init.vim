@@ -1,4 +1,4 @@
-" Plugins ----------------------------------------------------------------- {{{
+" Plugins ------------------------------------------------------------------ {{{
 call plug#begin('~/.config/nvim/plugins')
 
 Plug 'dracula/vim',{'name':'dracula'}
@@ -19,16 +19,18 @@ Plug 'vimwiki/vimwiki'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'lukas-reineke/virt-column.nvim'
 
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 " }}}
 
-" Colours ----------------------------------------------------------------- {{{
+" Theme -------------------------------------------------------------------- {{{
 set termguicolors
 let g:dracula_colorterm=0
 colorscheme dracula
 " }}}
 
-" Settings ---------------------------------------------------------------- {{{
+" Settings ----------------------------------------------------------------- {{{
 set autochdir
 set noexpandtab
 set tabstop=4
@@ -39,7 +41,7 @@ set foldmethod=marker
 set cursorline
 " }}}
 
-" Keybinds ---------------------------------------------------------------- {{{
+" Keybinds ----------------------------------------------------------------- {{{
 nnoremap <silent> gd         <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gi         <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gr         <cmd>lua vim.lsp.buf.references()<CR>
@@ -52,11 +54,11 @@ nnoremap <silent> <leader>a  <cmd>lua vim.lsp.buf.code_action()<CR>
 xmap     <silent> <leader>a  <cmd>lua vim.lsp.buf.code_action()<CR>
 " }}}
 
-" Commands ---------------------------------------------------------------- {{{
+" Commands ----------------------------------------------------------------- {{{
 command Reload :source ~/.config/nvim/init.vim
 " }}}
 
-" Autocomplete ----------------------------------------------------- {{{
+" Autocomplete ------------------------------------------------------ {{{
 sign define LspDiagnosticsSignError text=
 sign define LspDiagnosticsSignWarning text=
 sign define LspDiagnosticsSignInformation text=
@@ -113,7 +115,7 @@ lsp.omnisharp.setup(conf{
 EOF
 " }}}
 
-" Plugin Config ----------------------------------------------------------- {{{
+" Plugin Config ------------------------------------------------------------ {{{
 lua << EOF
 
 require("indent_blankline").setup {}
@@ -121,3 +123,23 @@ require("virt-column").setup {}
 
 EOF
 " }}}
+
+" Statusline --------------------------------------------------------------- {{{
+highlight StatusLine guifg=#000000
+highlight User1 guifg=#000000 guibg=#bd93f9 
+highlight User2 guibg=#f1fa8c guifg=#bd93f9
+highlight User3 guibg=#f1fa8c guifg=#000000
+highlight User4 guibg=#50fa7b guifg=#f1fa8c
+highlight User5 guibg=#50fa7b guifg=#000000
+highlight User6 guifg=#50fa7b
+function StatusLine()
+	let statusline=""
+	let statusline.="%1*\ \ %f\ "
+	let statusline.="%2*%3*"
+	let statusline.="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ '\ :''}"
+	let statusline.="%4*%5*"
+	let statusline.="\ \ %l:%c\ %6*"
+	return statusline
+endfunction
+set statusline=%!StatusLine()
+"  }}}
