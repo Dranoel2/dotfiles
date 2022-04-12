@@ -98,12 +98,17 @@ end
 
 local home = os.getenv("HOME")
 
-lsp.jdtls.setup(conf{cmd = { 'bash', home .. '/.dotfiles/jdtls.sh'} })
+lsp.jdtls.setup(conf{cmd = { 'bash', home .. '/.dotfiles/jdtls.sh'}})
 lsp.tailwindcss.setup(conf{})
 lsp.svelte.setup(conf{})
 lsp.elmls.setup(conf{})
 lsp.ccls.setup(conf{})
 lsp.eslint.setup(conf{})
+lsp.omnisharp.setup(conf{
+	cmd={"/usr/bin/omnisharp", 
+		"--languageserver" ,
+		"--hostPID", tostring(pid)};
+	root_dir = lsp.util.root_pattern('.git') })
  
 EOF
 " }}}

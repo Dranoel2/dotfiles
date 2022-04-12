@@ -1,3 +1,13 @@
+eval $(keychain --eval id_ed25519 -q)
+clear
+
+export GOPATH=$HOME/Projects/Go
+export PATH="$GOPATH/Projects/Go/bin:$PATH"
+export CC="gcc -g"
+
+export EDITOR="nvim"
+export PAGER="less"
+
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
@@ -24,14 +34,10 @@ zstyle ':vcs_info:git:*' formats '%K{yellow}%F{black}  %b %F{yellow}'
 setopt prompt_subst
 PROMPT='%(?..%F{red} %? %F{blue})%K{blue}%F{black}  %2~ %F{blue}${vcs_info_msg_0_}%k %f'
 
-export PATH="$(yarn global bin):$PATH"
 
 alias pac="yay --nodiffmenu --removemake --assume-installed xdg-utils"
 alias reload="source ~/.zshrc"
 alias ll="ls -la"
-
-export EDITOR="nvim"
-export PAGER="less"
 
 export RANGER_LOAD_DEFAULT_RC=false
 
@@ -46,4 +52,4 @@ fm() {
   cd $(cat $CHOSEN_DIR)
 }
 
-eval $(keychain --eval id_ed25519 -q)
+
