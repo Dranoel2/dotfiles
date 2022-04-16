@@ -52,6 +52,9 @@ nnoremap <silent> <leader>f  <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>a  <cmd>lua vim.lsp.buf.code_action()<CR>
 xmap     <silent> <leader>a  <cmd>lua vim.lsp.buf.code_action()<CR>
+
+smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 " }}}
 
 " Commands ----------------------------------------------------------------- {{{
@@ -103,14 +106,7 @@ local home = os.getenv("HOME")
 lsp.jdtls.setup(conf{cmd = { 'bash', home .. '/.dotfiles/jdtls.sh'}})
 lsp.tailwindcss.setup(conf{})
 lsp.svelte.setup(conf{})
-lsp.elmls.setup(conf{})
-lsp.ccls.setup(conf{})
-lsp.eslint.setup(conf{})
-lsp.omnisharp.setup(conf{
-	cmd={"/usr/bin/omnisharp", 
-		"--languageserver" ,
-		"--hostPID", tostring(pid)};
-	root_dir = lsp.util.root_pattern('.git') })
+lsp.ccls.setup(conf{ root_dir = lsp.util.root_pattern('Makefile') })
  
 EOF
 " }}}

@@ -18,11 +18,11 @@ super + Escape
 #
 
 # quit/restart bspwm
-super + {shift + e,r}
+super + {shift + q,q}
 	bspc {quit,wm -r}
 
 # close and kill
-super + shift + c
+super + c
 	bspc node -c
 
 super + {t,shift + t}
@@ -44,11 +44,11 @@ super + {h,j,k,l}
 super + shift + {h,j,k,l}
 	~/.dotfiles/bspwm/move_node.py {left,down,up,right}
 # focus the node for the given path jump
-super + {a,b,comma,period}
+super + {a,s,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
-super + {_,shift + }c
+Super + {_,shift + }g
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
