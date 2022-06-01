@@ -28,6 +28,7 @@ ln -sf $(pwd)/ranger.py ~/.config/ranger/colorschemes/dracula.py
 cd $(dirname "$0")
 
 ln -sf $(pwd)/zshrc ~/.zshrc
+ln -sf $(pwd)/zprofile ~/.zprofile
 
 mkdir -p ~/.xmonad
 ln -sf $(pwd)/xmonad.hs ~/.xmonad/xmonad.hs

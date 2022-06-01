@@ -52,9 +52,9 @@ nnoremap <silent> <leader>f  <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>a  <cmd>lua vim.lsp.buf.code_action()<CR>
 xmap     <silent> <leader>a  <cmd>lua vim.lsp.buf.code_action()<CR>
-
 smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
 imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+nmap              <S-u>      <C-r>
 " }}}
 
 " Commands ----------------------------------------------------------------- {{{
@@ -106,7 +106,15 @@ local home = os.getenv("HOME")
 lsp.jdtls.setup(conf{cmd = { 'bash', home .. '/.dotfiles/jdtls.sh'}})
 lsp.tailwindcss.setup(conf{})
 lsp.svelte.setup(conf{})
-lsp.ccls.setup(conf{ root_dir = lsp.util.root_pattern('Makefile') })
+lsp.ccls.setup(conf{ root_dir = lsp.util.root_pattern('Makefile', '.git') })
+lsp.gopls.setup(conf{})
+lsp.rls.setup(conf{
+	settings = {
+		rust = {
+			all_features = true,
+		},
+	},
+})
  
 EOF
 " }}}

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 ~/.fehbg
 xsetroot -cursor_name left_ptr
 
@@ -8,6 +10,5 @@ dunst &
 /usr/bin/discord --start-minimized &
 lxsession &
 /usr/bin/thunderbird &
-glava -d &
 
 exec dbus-launch bspwm
